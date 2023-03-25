@@ -12,6 +12,7 @@ jobs:
 
     if: github.actor == github.repository_owner
     runs-on: ubuntu-latest
+    container: node:16.16.0
 
     steps:
     - name: 'checkout codes'
@@ -20,5 +21,6 @@ jobs:
       uses: GabrielBB/xvfb-action@v1
       with:
         run: dotnet run
+        retention-days: 5
       env: 
         CONF: ${{ secrets.CONF }}
