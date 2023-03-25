@@ -11,13 +11,13 @@ jobs:
   build:
 
     if: github.actor == github.repository_owner
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: 'checkout codes'
-      uses: actions/checkout@main
+      uses: actions/checkout@v3
     - name: Run
-      uses: GabrielBB/xvfb-action@v3
+      uses: GabrielBB/xvfb-action@v1
       with:
         run: dotnet run
       env: 
