@@ -16,12 +16,6 @@ jobs:
     steps:
     - name: 'checkout codes'
       uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        cache: 'npm'
-    - run: npm ci
-    - run: npm test
     - name: Run
       uses: GabrielBB/xvfb-action@v1
       with:
