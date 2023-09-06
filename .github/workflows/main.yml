@@ -17,8 +17,11 @@ jobs:
     - name: 'checkout codes'
       uses: actions/checkout@v3
     - name: Run
-      uses: GabrielBB/xvfb-action@v3
+      uses: actions/setup-node@v3
       with:
-        run: dotnet run
+        node-version: 16
+        cache: 'npm'
       env: 
         CONF: ${{ secrets.CONF }}
+    - run: npm ci
+    - run: npm test
